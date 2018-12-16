@@ -1,0 +1,21 @@
+/*-----------------------------------------------------Index------------------------------------------------------------*/
+.homepage {
+    background: url(../img/hero.jpg);
+    background-position: center;
+}
+
+.homepage, footer a {
+    color: #fff;
+}
+
+.quote {
+    padding-top: 2em;
+    padding-bottom: 1.2em;
+    font-family: 'Marck Script', cursive;
+    font-size: 6em;
+}
+
+footer {
+    font-size: 1.25rem;
+}
+/*----------------------------------------------------/Index------------------------------------------------------------*/
