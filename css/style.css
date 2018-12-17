@@ -1,21 +1,38 @@
 /*-----------------------------------------------------Index------------------------------------------------------------*/
-.homepage {
-    background: url(../img/hero.jpg);
-    background-position: center;
+*{
+margin:0px;
+
 }
+body{
+    background: url(../img/hero.jpg);
+    background-color: rgb(0, 0, 0);
+    background-position: center;
+    background-attachment: fixed;
+}
+li a .nav-link{color:red;}
 
 .homepage, footer a {
     color: #fff;
 }
 
 .quote {
-    padding-top: 2em;
-    padding-bottom: 1.2em;
-    font-family: 'Marck Script', cursive;
+    padding-top: 1.2em;
+    padding-bottom: 0.5em;
+    font-family:cursive;
     font-size: 6em;
+}
+.hero-btn{
+    background: goldenrod;
+}
+
+.hero-btn:hover{
+background: black;
+color:white;
 }
 
 footer {
     font-size: 1.25rem;
+    background: #00000079;
 }
 /*----------------------------------------------------/Index------------------------------------------------------------*/
+
