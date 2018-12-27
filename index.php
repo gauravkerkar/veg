@@ -1,4 +1,3 @@
-<?PHP
 <!DOCTYPE html>
 <html>
 
@@ -61,4 +60,3 @@
 </body>
 
 </html>
-?>
