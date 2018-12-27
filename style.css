@@ -1,16 +1,9 @@
 /*-----------------------------------------------------Index------------------------------------------------------------*/
 .homepage {
     background: url(img/hero.jpg);
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.61);
     background-position: center;
     background-attachment: fixed;
-}
-
-li a .nav-link{
-    color:red;
-}
-
-.homepage, footer {
     color: #fff;
 }
 

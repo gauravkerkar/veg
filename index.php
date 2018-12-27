@@ -14,8 +14,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 </head>
 
-<body>
-    <div class="homepage">
+<body class="homepage">
+    <div>
         <div class="container">
             <nav class="navbar navbar-expand-md navbar-dark fixed-top">
                 <a class="navbar-brand logo" href="#">MUXYUM</a>
