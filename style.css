@@ -6,9 +6,11 @@
     background-attachment: fixed;
 }
 
-li a .nav-link{color:red;}
+li a .nav-link{
+    color:red;
+}
 
-.homepage, footer a {
+.homepage, footer {
     color: #fff;
 }
 
