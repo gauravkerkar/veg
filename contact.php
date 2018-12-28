@@ -30,7 +30,7 @@
                     <input type="text" name="name" class="form-control" placeholder="Name">
                 </div>
                 <div class="form-group">
-                    <input type="email" name="email" class="form-control" placeholder="E-mail address">
+                    <input type="email" name="email" class="form-control" placeholder="Email address">
                 </div>
                 <div class="form-group">
                     <textarea class="form-control" rows="5" placeholder="Comment"></textarea>
