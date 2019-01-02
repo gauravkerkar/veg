@@ -15,13 +15,37 @@
 </head>
 
 <body class="loginform">
+
+<?php
+    // define variables and set to empty values
+    $usernameErr = $passwordErr = "";
+    $username = $password = "";
+    
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      if (empty($_POST["username"])) {
+        $usernameErr = "Username is required!";
+      } else {
+        $username = test_input($_POST["username"]);
+      }
+    
+      if (empty($_POST["password"])) {
+        $passwordErr = "Password is required!";
+      } else {
+        $password = test_input($_POST["password"]);
+      }
+    }
+    ?>
+
     <div class="container">
-        <form>
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text"><img src="img/user.png" alt="usericon" style="height: 24px;width: 24px;"></span>
                 </div>
                 <input type="text" class="form-control" name="username" placeholder="Username">
+            </div>
+            <div class="error">
+                <strong><?php echo $usernameErr; ?></strong>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -29,10 +53,14 @@
                 </div>
                 <input type="password" class="form-control" name="password" placeholder="Password">
             </div>
+            <div class="error">
+                <strong><?php echo $passwordErr; ?></strong>
+            </div>
             <input type="Submit" class="btn btn-primary loginbtn" value="Login">
             &nbsp;<a href="registerform.html">Don't have an account?&nbsp;Register now</a>
         </form>
     </div>
+
 </body>
 
 </html>

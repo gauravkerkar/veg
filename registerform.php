@@ -15,10 +15,59 @@
 </head>
 
 <body class="registerform">
+
+<?php
+// define variables and set to empty values
+$nameErr = $emailErr = $phnoErr = $usernameErr = $passwordErr = "";
+$name = $email = $phno = $username = $password = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (empty($_POST["name"])) {
+    $nameErr = "Name is required";
+  } else {
+    $name = test_input($_POST["name"]);
+    // check if name only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+      $nameErr = "Only letters and white space allowed"; 
+    }
+  }
+
+  if (empty($_POST["email"])) {
+    $emailErr = "Email is required";
+  } else {
+    $email = test_input($_POST["email"]);
+    // check if e-mail address is well-formed
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $emailErr = "Invalid email format"; 
+    }
+  }
+
+  if (empty($_POST["username"])) {
+    $usernameErr = "Username is required!";
+  } else {
+    $username = test_input($_POST["username"]);
+    // check if name only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Z ]*$/",$username)) {
+      $usernameErr = "Only letters and white space is allowed"; 
+    }
+  }
+
+  if (empty($_POST["password"])) {
+    $passwordErr = "Password is required!";
+  } else {
+    $password = test_input($_POST["password"]);
+    // check if name only contains letters and whitespace
+    if (!preg_match("(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}",$password)) {
+      $passwordErr = "Only letters and white space is allowed"; 
+    }
+  }
+}
+?>
+
     <div class="container">
         <h1 class="text-center text-success">Register</h1>
         <br>
-        <form>
+        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">
@@ -66,6 +115,9 @@
                     </span>
                 </div>
                 <input type="password" class="form-control" name="password" placeholder="Password">
+            </div>
+            <div class="error">
+                <strong><?php echo $passwordErr; ?></strong>
             </div>
             <input type="submit" class="btn btn-success btn-block" value="Register">
         </form>
