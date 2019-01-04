@@ -12,20 +12,30 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script>
+        function showpass() {
+            var pass = document.getElementById('pass');
+            if (document.getElementById('check').checked) {
+                pass.setAttribute('type', 'text');
+            } else {
+                pass.setAttribute('type', 'password');
+            }
+        }
+    </script>
 </head>
 
 <body class="registerform">
 
 <?php
 // define variables and set to empty values
-$nameErr = $emailErr = $phnoErr = $usernameErr = $passwordErr = "";
-$name = $email = $phno = $username = $password = "";
+$nameErr = $emailErr = $usernameErr = $passwordErr = "";
+$name = $email = $username = $password = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["name"])) {
-    $nameErr = "Name is required";
+    $nameErr = "Name is required!";
   } else {
-    $name = test_input($_POST["name"]);
+    $name = $_POST["name"];
     // check if name only contains letters and whitespace
     if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
       $nameErr = "Only letters and white space allowed"; 
@@ -35,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["email"])) {
     $emailErr = "Email is required";
   } else {
-    $email = test_input($_POST["email"]);
+    $email = $_POST["email"];
     // check if e-mail address is well-formed
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
       $emailErr = "Invalid email format"; 
@@ -45,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["username"])) {
     $usernameErr = "Username is required!";
   } else {
-    $username = test_input($_POST["username"]);
+    $username = $_POST["username"];
     // check if name only contains letters and whitespace
     if (!preg_match("/^[a-zA-Z ]*$/",$username)) {
       $usernameErr = "Only letters and white space is allowed"; 
@@ -55,10 +65,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   if (empty($_POST["password"])) {
     $passwordErr = "Password is required!";
   } else {
-    $password = test_input($_POST["password"]);
+    $password = $_POST["password"];
     // check if name only contains letters and whitespace
     if (!preg_match("(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}",$password)) {
-      $passwordErr = "Only letters and white space is allowed"; 
+      $passwordErr = "Password must contain an uppercase alphabet, a lowercase alphabet and a digit and it should be minimum 8 characters!"; 
     }
   }
 }
@@ -75,6 +85,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </span>
                 </div>
                 <input type="text" class="form-control" name="name" placeholder="Name">
+            </div>
+            <div class="error">
+                <strong><?php echo $nameErr; ?></strong>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -108,20 +121,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <input type="text" class="form-control" name="username" placeholder="Username">
             </div>
+            <div class="error">
+                <strong><?php echo $usernameErr; ?></strong>
+            </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">
                         <img src="img/key.png" alt="keyicon" style="height: 24px;width: 24px;">
                     </span>
                 </div>
-                <input type="password" class="form-control" name="password" placeholder="Password">
+                <input type="password" class="form-control" id="pass" name="password" placeholder="Password">
             </div>
+            <input type="checkbox" onclick="showpass();" id="check"> Show Password
             <div class="error">
                 <strong><?php echo $passwordErr; ?></strong>
             </div>
+            <br>
             <input type="submit" class="btn btn-success btn-block" value="Register">
         </form>
     </div>
+
 </body>
 
 </html>

@@ -12,6 +12,17 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <script>
+        function showpass() {
+            var pass = document.getElementById('pass');
+            if (document.getElementById('check').checked) {
+                pass.setAttribute('type', 'text');
+            } else {
+                pass.setAttribute('type', 'password');
+            }
+        }
+    </script>
+
 </head>
 
 <body class="loginform">
@@ -25,13 +36,13 @@
       if (empty($_POST["username"])) {
         $usernameErr = "Username is required!";
       } else {
-        $username = test_input($_POST["username"]);
+        $username = $_POST["username"];
       }
     
       if (empty($_POST["password"])) {
         $passwordErr = "Password is required!";
       } else {
-        $password = test_input($_POST["password"]);
+        $password = $_POST["password"];
       }
     }
     ?>
@@ -51,13 +62,15 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text"><img src="img/lock.png" alt="passwordicon" style="height: 24px;width: 24px;"></span>
                 </div>
-                <input type="password" class="form-control" name="password" placeholder="Password">
+                <input type="password" class="form-control" id="pass" name="password" placeholder="Password">
             </div>
+            <input type="checkbox" onclick="showpass();" id="check"> Show Password
             <div class="error">
                 <strong><?php echo $passwordErr; ?></strong>
             </div>
+            <br>
             <input type="Submit" class="btn btn-primary loginbtn" value="Login">
-            &nbsp;<a href="registerform.html">Don't have an account?&nbsp;Register now</a>
+            &nbsp;<a href="registerform.php">Don't have an account?&nbsp;Register now</a>
         </form>
     </div>
 
