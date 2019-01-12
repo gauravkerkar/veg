@@ -1,12 +1,11 @@
 /*-----------------------------------------------------Index------------------------------------------------------------*/
-.homepage {
+.first-tray{
     background: url(img/hero.jpg);
     background-color: rgba(0, 0, 0, 0.61);
     background-position: center;
-    background-attachment: fixed;
+    background-attachment: fixed;  
     color: #fff;
 }
-
 .quote {
     padding-top: 1.2em;
     padding-bottom: 0.5em;
@@ -21,7 +20,12 @@
 background: black;
 color:white;
 }
-
+.third-tray{
+    background: #75717179;
+}
+.Reservation,.map{
+    background: #fff;
+}
 footer {
     font-size: 1.25rem;
     background: #00000079;
