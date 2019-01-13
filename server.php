@@ -17,6 +17,7 @@ if (isset($_POST['register'])) {
     $username = mysqli_real_escape_string($db, $_POST['username']);
     $password = mysqli_real_escape_string($db, $_POST['password']);
 
+// Display error if the fields are empty   
   if (empty($_POST["name"])) {
     $nameErr = "Name is required!";
   } 
