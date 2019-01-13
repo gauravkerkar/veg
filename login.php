@@ -29,7 +29,7 @@
 <body class="loginform">
 
     <div class="container">
-        <form method="POST" action="#">
+        <form method="POST" action="login.php">
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text"><img src="img/user.png" alt="usericon" style="height: 24px;width: 24px;"></span>
@@ -47,7 +47,7 @@
             </div>
             <input type="checkbox" onclick="showpass();" id="check"> Show Password
             <div class="error">
-                <strong><?php echo $passwordErr; ?></strong>
+                <strong><?php echo $passwordErr; ?><?php echo $loginErr; ?></strong>
             </div>
             <br>
             <input type="Submit" class="btn btn-primary loginbtn" name="login" value="Login">
