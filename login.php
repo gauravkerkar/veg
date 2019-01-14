@@ -1,3 +1,4 @@
+<?php include('server.php'); ?>
 <!DOCTYPE html>
 <html>
 
@@ -27,28 +28,8 @@
 
 <body class="loginform">
 
-<?php
-    // define variables and set to empty values
-    $usernameErr = $passwordErr = "";
-    $username = $password = "";
-    
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-      if (empty($_POST["username"])) {
-        $usernameErr = "Username is required!";
-      } else {
-        $username = $_POST["username"];
-      }
-    
-      if (empty($_POST["password"])) {
-        $passwordErr = "Password is required!";
-      } else {
-        $password = $_POST["password"];
-      }
-    }
-    ?>
-
     <div class="container">
-        <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+        <form method="POST" action="login.php">
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text"><img src="img/user.png" alt="usericon" style="height: 24px;width: 24px;"></span>
@@ -66,11 +47,11 @@
             </div>
             <input type="checkbox" onclick="showpass();" id="check"> Show Password
             <div class="error">
-                <strong><?php echo $passwordErr; ?></strong>
+                <strong><?php echo $passwordErr; ?><?php echo $loginErr; ?></strong>
             </div>
             <br>
-            <input type="Submit" class="btn btn-primary loginbtn" value="Login">
-            &nbsp;<a href="registerform.php">Don't have an account?&nbsp;Register now</a>
+            <input type="Submit" class="btn btn-primary loginbtn" name="login" value="Login">
+            &nbsp;<a href="register.php">Don't have an account?&nbsp;Register now</a>
         </form>
     </div>
 
