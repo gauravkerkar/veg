@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title></title>
+    <title>LOGIN</title>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!--Cascading Stylesheet File-->
@@ -13,6 +13,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <link rel="icon" href="./img/siteicon.png">
     <script>
         function showpass() {
             var pass = document.getElementById('pass');
@@ -37,7 +38,8 @@
                 <input type="text" class="form-control" name="username" placeholder="Username">
             </div>
             <div class="error">
-                <strong><?php echo $usernameErr; ?></strong>
+                <strong>
+                    <?php echo $usernameErr; ?></strong>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -47,7 +49,9 @@
             </div>
             <input type="checkbox" onclick="showpass();" id="check"> Show Password
             <div class="error">
-                <strong><?php echo $passwordErr; ?><?php echo $loginErr; ?></strong>
+                <strong>
+                    <?php echo $passwordErr; ?>
+                    <?php echo $loginErr; ?></strong>
             </div>
             <br>
             <input type="Submit" class="btn btn-primary loginbtn" name="login" value="Login">
