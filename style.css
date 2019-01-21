@@ -100,4 +100,26 @@ border:double solid;
     transition: 0.5s;
     border-bottom:3px solid rgb(209, 152, 8);
 }
+.menu-dish li{
+    list-style: none;
+    display: inline-block;
+    border:2px solid black;
+    margin-top: 10px;
+}
+.menu-font{
+    font-family: cursive;
+}
+.dish-head{
+    background: #000000c2;
+    color:white;
+ transition: all .2s ease-in-out;
+ }
+.dish-head:hover { transform: scale(1.1);
+    background: goldenrod;
+}
+hr{
+border-top:10px solid grey;
+height:8px;
+}
+
 /*---------------------------------------------------------/Menu--------------------------------------------------------------*/
