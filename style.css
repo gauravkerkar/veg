@@ -1,5 +1,4 @@
-/*-----------------------------------------------------Index------------------------------------------------------------*/
-.first-tray{
+.first-tray {
     background: url(img/hero.jpg);
     background-color: rgba(0, 0, 0, 0.61);
     background-position: center;
@@ -8,34 +7,32 @@
     font-family:cursive;
 }
 .quote {
-    padding-top: 1.2em;
-    padding-bottom: 0.5em;
-    font-size: 6em;
+    padding-top: 1.5em;
+    padding-bottom: 1em;
+    font-size: 5em;
 }
-.btn{
+.btn {
     background: goldenrod;
+    color: #000;
 }
-
 .btn:hover {
-    background: black;
-    color:white;
+    background: #000;
+    color:#fff;
 }
-.titles{
+.titles {
     font-family:cursive;
+    padding: 1em 0;
 }
-.second-tray{
-padding: 2em 0;
+.second-tray {
+    padding: 0 0 4em;
 }
-.third-tray-con{
+.third-tray-con {
     line-height:2.8;
     font-size: 18px;
     font-weight: bold;
     color:#fff; 
 }
-.icons{
-color:goldenrod;
-}
-.third-tray{
+.third-tray {
     background:url(./img/thirdtray.png);
     background-attachment: fixed;
     background-blend-mode: overlay;
@@ -43,20 +40,27 @@ color:goldenrod;
     font-family:cursive;
     padding: 4em 0;
 }
-footer {
-    font-size: 1.25rem;
-    background: #00000079;
+a.nav-link.menu-lnk {
+    font-size: 1.3em;
 }
-/*----------------------------------------------------/Index------------------------------------------------------------*/
-
-/*-----------------------------------------------------Contact------------------------------------------------------------*/
-.contact-template, .message-template {
-    padding: 3rem;
+a.nav-link.menu-lnk:after {
+    content: '';
+    width: 0; 
+    height: 3px;
+    display: block;
+    margin-top: 5px;
+    right: 0;
+    background: #fff;
+    transition: width .3s ease;
 }
-/*----------------------------------------------------/Contact------------------------------------------------------------*/
+a.nav-link.menu-lnk:hover:after {
+  width: 100%;
+  left: 0;
+  background: #fff;
+}
 
-/*-----------------------------------------------------Login----------------------------------------------------------------*/
-.loginform {
+
+.login {
     padding: 12rem 24rem;
 }
 .loginbtn {
@@ -65,75 +69,64 @@ footer {
 .error {
     color: red;
 }
-/*----------------------------------------------------/Login----------------------------------------------------------------*/
 
-/*-----------------------------------------------------Register---------------------------------------------------------------*/
+
 .register {
     padding: 3rem 24rem;
 }
-/*----------------------------------------------------/Register---------------------------------------------------------------*/
-/*----------------------------------------------------------Menu--------------------------------------------------------------*/
-.hero-title h2 {
-text-align:center;
-border:double solid;
+
+
+.table-contain {
+    padding: 2em 10em;
 }
-/*---------------------------------------------------------/Menu--------------------------------------------------------------*/
-.menu{
+
+.hero-title h2 {
+    text-align:center;
+    border:double solid;
+}
+.menu {
     background:url(./img/hero.jpg);
     background-attachment: fixed;
     font-family:cursive;
     padding: 4.3em 0;
     color:#fff;
 }
-.menu-heading{
+.menu-heading {
     padding-top:0.8em;
 }
-.menu-nev-a{
+.menu-nev-a {
     color:darkgoldenrod;
     transition: 0.5s;
     text-decoration: none !important;
     font-weight: bold;
     padding-top:3em; 
 }
-.menu-nev-a:hover{
+.menu-nev-a:hover {
     color:rgb(197, 144, 9);
     transition: 0.5s;
     border-bottom:3px solid rgb(209, 152, 8);
 }
-.menu-dish li{
+.menu-dish li {
     list-style: none;
     display: inline-block;
     border:2px solid black;
     margin-top: 10px;
 }
-.menu-font{
+.menu-font {
     font-family: cursive;
 }
-.dish-head{
+
+.dish-head {
     background: #000000c2;
     color:white;
- transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
  }
+
 .dish-head:hover { transform: scale(1.1);
     background: goldenrod;
 }
-hr{
-border-top:10px solid grey;
-height:8px;
-}
 
-/*---------------------------------------------------------/Menu--------------------------------------------------------------*/
-/* contact */
-.CONTECT{
-    background:url(./img/contect-hero.jpg);
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size:cover;
-    font-family:cursive;
-    padding: 4.3em 0;
-    color:#fff;
+hr {
+    border-top:10px solid grey;
+    height:8px;
 }
-.con-icon{
-    color:rgba(235, 94, 117, 0.801);
-}
-/* /contact */

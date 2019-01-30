@@ -8,11 +8,18 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!--Cascading Stylesheet File-->
     <link rel="stylesheet" type="text/css" href="style.css">
+<<<<<<< HEAD
     <!--Bootstrap 4 CDN Link-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+=======
+    <!--Bootstrap 4 Link-->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="bootstrap/jquery/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+>>>>>>> 9139b9aa69e31eaf4cb4dce153b5198240d9c5cd
     <link rel="icon" href="./img/siteicon.png">
     <script>
         function showpass() {
@@ -24,12 +31,11 @@
             }
         }
     </script>
-
 </head>
 
-<body class="loginform">
+<body>
 
-    <div class="container">
+    <div class="login">
         <form method="POST" action="login.php">
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -54,7 +60,7 @@
                     <?php echo $loginErr; ?></strong>
             </div>
             <br>
-            <input type="Submit" class="btn btn-primary loginbtn" name="login" value="Login">
+            <input type="submit" class="btn btn-primary loginbtn" name="login" value="Login">
             &nbsp;<a href="register.php">Don't have an account?&nbsp;Register now</a>
         </form>
     </div>
