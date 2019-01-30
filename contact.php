@@ -15,7 +15,7 @@
     <!-- Fontawesome icons link -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
         crossorigin="anonymous">
-    <link rel="icon" href="./img/logo.png">
+    <link rel="icon" href="./img/siteicon.png">
 </head>
 
 <body class="menu-font">
@@ -23,7 +23,7 @@
         <div class="text-center">
             <span class="menu-icon"><img src="./img/logo.png" alt="logo" width="150em"></span>
             <p class="display-4 menu-heading">CONTACT US</p>
-            <span class="menu-nev"><a class="menu-nev-a" href="./index.html">HOME</a> &nbsp;&nbsp;<span class="">CONTACT
+            <span class="menu-nev"><a class="menu-nev-a" href="./index.php">HOME</a> &nbsp;&nbsp;<span class="">CONTACT
                     US</span></span>
             <br><br>
             <h5>WE'D <i class="con-icon fa fa-heart fa-1x"></i>&nbsp;TO HELP !</h5>
