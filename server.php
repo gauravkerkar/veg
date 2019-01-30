@@ -1,19 +1,18 @@
 <?php
 session_start();
-
 // define variables and set to empty values
-$name = $email = $mobno = $add = $username = $password = "";
-$nameErr = $emailErr = $mobnoErr = $addErr = $usernameErr = $passwordErr = $loginErr = "";
+$name = $email = $mobno = $address = $username = $password = "";
+$nameErr = $emailErr = $mobnoErr = $addressErr = $usernameErr = $passwordErr = $loginErr = "";
 
 // Connect to the database
-$db = mysqli_connect('localhost', 'root', '', 'login');
+$db = mysqli_connect('localhost', 'root', '', 'maxyum');
 
 // If the register button is clicked
 if (isset($_POST['register'])) {
     $name = mysqli_real_escape_string($db, $_POST['name']);
     $email = mysqli_real_escape_string($db, $_POST['email']);
     $mobno = mysqli_real_escape_string($db, $_POST['mobno']);
-    $add = mysqli_real_escape_string($db, $_POST['add']);
+    $address = mysqli_real_escape_string($db, $_POST['address']);
     $username = mysqli_real_escape_string($db, $_POST['username']);
     $password = mysqli_real_escape_string($db, $_POST['password']);
 
@@ -30,8 +29,8 @@ if (isset($_POST['register'])) {
     $mobnoErr = "Mobile number is required!";
   }
 
-  if (empty($_POST["add"])) {
-    $addErr = "Address is required!";
+  if (empty($_POST["address"])) {
+    $addressErr = "Address is required!";
   }
 
   if (empty($_POST["username"])) {
@@ -43,9 +42,9 @@ if (isset($_POST['register'])) {
   }
 
   // If no errors, save the user's data to the database
-  if ($name != "" && $email != "" && $mobno != "" && $add != "" && $username != "" && $password != "") {
+  if ($name != "" && $email != "" && $mobno != "" && $address != "" && $username != "" && $password != "") {
     $password_encrypt = md5($password); // Password encryption before storing in the database [Message Digest 5]
-    $query = "INSERT INTO user (name, email, pno, adds, uname, pass) VALUES ('$name', '$email', '$mobno', '$add', '$username', '$password_encrypt')";
+    $query = "INSERT INTO user_login (name, email, mobile, address, username, password) VALUES ('$name', '$email', '$mobno', '$address', '$username', '$password_encrypt')";
     mysqli_query($db, $query);
     header('location: login.php'); //redirect to login page
     exit();	
@@ -67,12 +66,11 @@ if (isset($_POST['login'])) {
 
   if ($username != "" && $password != "") {
     $password_encrypt = md5($password); // Password encryption before comparing with the database [Message Digest 5]
-    $query = "SELECT * FROM user WHERE uname='$username' AND pass='$password_encrypt'";
+    $query = "SELECT * FROM user_login WHERE username='$username' AND password='$password_encrypt'";
     $result = mysqli_query($db, $query);
-    if (mysqli_num_rows($result) == 1) {
-        $_SESSION['username'] = $username;
-        $_SESSION['success'] = "You Logged In Successfully!";
-        header('location: index.html'); //redirect to 
+    if (mysqli_num_rows($result)==1) {
+        $_SESSION['user'] = $username;
+        header('location: order.php'); //redirect to order page
         exit();	
     } else {
         $loginErr = "Incorrect username and password!";
@@ -80,11 +78,4 @@ if (isset($_POST['login'])) {
   }
 }
 
-// Logout
-if (isset($_GET['logout'])) {
-    session_destroy();
-    unset($_SESSION['username']);
-    header('location: login.php');
-    exit();	
-}
 ?>

@@ -3,24 +3,24 @@
 <html>
 
 <head>
-    <title></title>
+    <title>REGISTER</title>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!--Cascading Stylesheet File-->
     <link rel="stylesheet" type="text/css" href="style.css">
-    <!--Bootstrap 4 CDN Link-->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+    <!--Bootstrap 4 Link-->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="bootstrap/jquery/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <link rel="icon" href="./img/siteicon.png">
 </head>
 
-<body class="registerform">
+<body>
 
-    <div class="container">
-        <h1 class="text-center text-success">Register</h1>
+    <div class="register">
+        <h1 class="text-center text-primary">Register</h1>
         <br>
-        <form method="post" action="register.php">
+        <form method="POST" action="register.php">
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">
@@ -30,7 +30,8 @@
                 <input type="text" class="form-control" name="name" placeholder="Name">
             </div>
             <div class="error">
-                <strong><?php echo $nameErr; ?></strong>
+                <strong>
+                    <?php echo $nameErr; ?></strong>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -41,7 +42,8 @@
                 <input type="email" class="form-control" name="email" placeholder="Email Address">
             </div>
             <div class="error">
-                <strong><?php echo $emailErr; ?></strong>
+                <strong>
+                    <?php echo $emailErr; ?></strong>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -52,7 +54,8 @@
                 <input type="text" class="form-control" name="mobno" placeholder="Mobile number">
             </div>
             <div class="error">
-                <strong><?php echo $mobnoErr; ?></strong>
+                <strong>
+                    <?php echo $mobnoErr; ?></strong>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -60,10 +63,11 @@
                         <img src="img/address.png" alt="addressicon" style="height: 24px;width: 24px;">
                     </span>
                 </div>
-                <textarea class="form-control" rows="2" name="add" placeholder="Address"></textarea>
+                <textarea class="form-control" rows="2" name="address" placeholder="Address"></textarea>
             </div>
             <div class="error">
-                <strong><?php echo $addErr; ?></strong>
+                <strong>
+                    <?php echo $addressErr; ?></strong>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -74,7 +78,8 @@
                 <input type="text" class="form-control" name="username" placeholder="Username">
             </div>
             <div class="error">
-                <strong><?php echo $usernameErr; ?></strong>
+                <strong>
+                    <?php echo $usernameErr; ?></strong>
             </div>
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
@@ -85,10 +90,11 @@
                 <input type="password" class="form-control" id="pass" name="password" placeholder="Password">
             </div>
             <div class="error">
-                <strong><?php echo $passwordErr; ?></strong>
+                <strong>
+                    <?php echo $passwordErr; ?></strong>
             </div>
             <br>
-            <input type="submit" class="btn btn-success btn-block" name="register" value="Register">
+            <input type="submit" class="btn btn-primary btn-block" name="register" value="Register">
         </form>
     </div>
 
