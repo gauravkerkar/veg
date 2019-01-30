@@ -123,3 +123,17 @@ height:8px;
 }
 
 /*---------------------------------------------------------/Menu--------------------------------------------------------------*/
+/* contact */
+.CONTECT{
+    background:url(./img/contect-hero.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size:cover;
+    font-family:cursive;
+    padding: 4.3em 0;
+    color:#fff;
+}
+.con-icon{
+    color:rgba(235, 94, 117, 0.801);
+}
+/* /contact */
