@@ -52,9 +52,9 @@
                     </div>
                     <div class="form-group">
                         <textarea class="form-control" name="discription" placeholder="Discription.." required rows="7"></textarea>
-                    </div>
-                    <button type="submit" name="submit" value="submit" class="btn btn-default">Submit</button>
-                </form>
+                    </div><div class="text-center pb-2">
+                    <button type="submit" name="submit" value="submit" class="btn btn-primary">Submit</button>
+</div></form>
             </div>
             <div class="col-sm-6 map">
                 <div class="container text-center">
@@ -90,10 +90,36 @@
         </div>
 
     </div>
-    <footer class="font-weight-light ">
-            &copy; 2018 maxyum.com | All Rights Reserved.
-        </footer>
+
+    <footer class="page-footer font-small blue">
+  <div class="footer-copyright text-center py-3">© 2018 Copyright:
+    <a href="./index.php"> MaxYum.com | All Rights Reserved.</a>
+  </div>
+
+</footer>
        
+<!-- php -->
+<?php 
+if(isset($_POST['submit'])){
+    $from = "nmvekp09@gmail.com"; // this is your Email address
+    $to = $_POST['email']; // this is the sender's Email address
+    $first_name = $_POST['first_name'];
+    $last_name = $_POST['last_name'];
+    $subject = "Form submission";
+    $subject2 = "Copy of your form submission";
+    $message = $first_name . " " . $last_name . " wrote the following:" . "\n\n" . $_POST['discription'];
+    $message2 = "Here is a copy of your message " . $first_name . "\n\n" . $_POST['discription'];
+
+    $headers = "From:" . $from;
+    $headers2 = "From:" . $to;
+    mail($to,$subject,$message,$headers);
+    mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
+    echo "Mail Sent. Thank you " . $first_name . ", we will contact you shortly.";
+    // You can also use header('Location: thank_you.php'); to redirect to another page.
+    }
+?>
+<!-- /php -->
+
 </body>
 
 </html>

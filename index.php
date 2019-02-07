@@ -99,9 +99,12 @@
             </div>
         </div>
     </div>
-    <footer class="container font-weight-light" style="font-size: 1.25em;margin-top: -2.2em;">
-        &copy; 2019 maxyum.com | All Rights Reserved.
-    </footer>
+    <footer class="page-footer font-small blue">
+  <div class="footer-copyright text-center py-3">© 2018 Copyright:
+    <a href="./index.php"> MaxYum.com | All Rights Reserved.</a>
+  </div>
+
+</footer>
 
 </body>
 
