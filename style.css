@@ -6,6 +6,10 @@
     color: #fff;
     font-family:cursive;
 }
+footer{
+    background: rgb(51, 49, 49);
+    color:white;
+}
 .quote {
     padding-top: 1.5em;
     padding-bottom: 1em;

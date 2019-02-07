@@ -35,7 +35,7 @@
             <div class="col-sm-6">
                 <h3 class="text-center">Write Us</h3>
                 <hr>
-                <form action="contect.php" method="POST">
+                <form action="contact.php" method="POST">
                     <div class="form-group form-inline">
                         <input type="name" class="form-control" name="first_name" required placeholder="First-Name">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -53,9 +53,9 @@
                     </div>
                     <div class="form-group">
                         <textarea class="form-control" name="discription" placeholder="Discription.." required rows="7"></textarea>
-                    </div>
-                    <button type="submit" name="submit" value="submit" class="btn btn-default">Submit</button>
-                </form>
+                    </div><div class="text-center pb-2">
+                    <button type="submit" name="submit" value="submit" class="btn btn-primary">Submit</button>
+</div></form>
             </div>
             <div class="col-sm-6 map">
                 <div class="container text-center">
@@ -91,21 +91,25 @@
         </div>
 
     </div>
-    <footer class="font-weight-light ">
-            &copy; 2018 maxyum.com | All Rights Reserved.
-        </footer>
+
+    <footer class="page-footer font-small blue">
+  <div class="footer-copyright text-center py-3">© 2018 Copyright:
+    <a href="./index.php"> MaxYum.com | All Rights Reserved.</a>
+  </div>
+
+</footer>
        
 <!-- php -->
 <?php 
 if(isset($_POST['submit'])){
-    $to = "gauravkerkar1999@gmail.com"; // this is your Email address
-    $from = $_POST['email']; // this is the sender's Email address
+    $from = "nmvekp09@gmail.com"; // this is your Email address
+    $to = $_POST['email']; // this is the sender's Email address
     $first_name = $_POST['first_name'];
     $last_name = $_POST['last_name'];
     $subject = "Form submission";
     $subject2 = "Copy of your form submission";
-    $message = $first_name . " " . $last_name . " wrote the following:" . "\n\n" . $_POST['message'];
-    $message2 = "Here is a copy of your message " . $first_name . "\n\n" . $_POST['message'];
+    $message = $first_name . " " . $last_name . " wrote the following:" . "\n\n" . $_POST['discription'];
+    $message2 = "Here is a copy of your message " . $first_name . "\n\n" . $_POST['discription'];
 
     $headers = "From:" . $from;
     $headers2 = "From:" . $to;
