@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>CONTECT US</title>
+    <title>CONTACT US</title>
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!--Cascading Stylesheet File-->
@@ -18,7 +18,7 @@
 </head>
 
 <body class="menu-font">
-    <div class="CONTECT text-center">
+    <div class="CONTACT text-center">
         <div class="text-center">
             <span class="menu-icon"><img src="./img/logo.png" alt="logo" width="150em"></span>
             <p class="display-4 menu-heading">CONTACT US</p>
@@ -34,7 +34,7 @@
             <div class="col-sm-6">
                 <h3 class="text-center">Write Us</h3>
                 <hr>
-                <form action="contect.php" method="POST">
+                <form action="contact.php" method="POST">
                     <div class="form-group form-inline">
                         <input type="name" class="form-control" name="first_name" required placeholder="First-Name">
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -94,28 +94,6 @@
             &copy; 2018 maxyum.com | All Rights Reserved.
         </footer>
        
-<!-- php -->
-<?php 
-if(isset($_POST['submit'])){
-    $to = "gauravkerkar1999@gmail.com"; // this is your Email address
-    $from = $_POST['email']; // this is the sender's Email address
-    $first_name = $_POST['first_name'];
-    $last_name = $_POST['last_name'];
-    $subject = "Form submission";
-    $subject2 = "Copy of your form submission";
-    $message = $first_name . " " . $last_name . " wrote the following:" . "\n\n" . $_POST['message'];
-    $message2 = "Here is a copy of your message " . $first_name . "\n\n" . $_POST['message'];
-
-    $headers = "From:" . $from;
-    $headers2 = "From:" . $to;
-    mail($to,$subject,$message,$headers);
-    mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
-    echo "Mail Sent. Thank you " . $first_name . ", we will contact you shortly.";
-    // You can also use header('Location: thank_you.php'); to redirect to another page.
-    }
-?>
-<!-- /php -->
-
 </body>
 
 </html>
