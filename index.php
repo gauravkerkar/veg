@@ -100,8 +100,8 @@
         </div>
     </div>
     <footer class="page-footer font-small blue">
-  <div class="footer-copyright text-center py-3">© 2018 Copyright:
-    <a href="./index.php"> MaxYum.com | All Rights Reserved.</a>
+  <div class="footer-copyright text-center py-3">© 2019 Copyright:
+    <a href="./index.php" class="text-white"> maxyum.com</a> | All Rights Reserved.
   </div>
 
 </footer>

@@ -1,3 +1,36 @@
+<?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'PHPMailer/src/Exception.php';
+require 'PHPMailer/src/PHPMailer.php';
+require 'PHPMailer/src/SMTP.php';
+
+$mail = new PHPMailer(true);                              // Passing `true` enables exceptions
+if(isset($_POST['submit'])) {
+    //Server settings
+    $mail->isSMTP();                                      // Set mailer to use SMTP
+    $mail->Host = 'smtp.gmail.com';                        // Specify SMTP servers
+    $mail->SMTPAuth = true;                               // Enable SMTP authentication
+    $mail->Username = '';               // SMTP username
+    $mail->Password = '';                        // SMTP password
+    $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `SSL` also accepted
+    $mail->Port = 587;                                    // TCP port to connect to 587 = `TLS` or 465 = `SSL`
+
+    //Recipients
+    $mail->setFrom($_POST['email'], $_POST['first_name']);
+    $mail->addAddress('nmvekp09@gmail.com', 'Vaman');
+
+    //Content
+    $mail->isHTML(true);                                  // Set email format to HTML
+    $mail->Subject = $_POST['subject'];                   // Set mail subject
+    $mail->Body = $_POST['discription'];
+
+    $mail->send();
+    echo '<script>alert("Message has been sent. We will contact you shortly!")</script>';
+}
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -41,8 +74,8 @@
                         <input type="name" class="form-control" required name="last_name" placeholder="Last-Name">
                     </div>
                     <div class="form-group">
-                        <input type="text" name="phone" pattern="[1-9]{1}[0-9]{9}" max-length="10" class="form-control" required
-                            placeholder="Phone-No.">
+                        <input type="text" name="phone" pattern="[1-9]{1}[0-9]{9}" max-length="10" class="form-control"
+                            required placeholder="Phone-No.">
                     </div>
                     <div class="form-group">
                         <input type="email" name="email" class="form-control" placeholder="Enter Your Email">
@@ -52,9 +85,11 @@
                     </div>
                     <div class="form-group">
                         <textarea class="form-control" name="discription" placeholder="Discription.." required rows="7"></textarea>
-                    </div><div class="text-center pb-2">
-                    <button type="submit" name="submit" value="submit" class="btn btn-primary">Submit</button>
-</div></form>
+                    </div>
+                    <div class="text-center pb-2">
+                        <button type="submit" name="submit" value="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                </form>
             </div>
             <div class="col-sm-6 map">
                 <div class="container text-center">
@@ -92,34 +127,11 @@
     </div>
 
     <footer class="page-footer font-small blue">
-  <div class="footer-copyright text-center py-3">© 2018 Copyright:
-    <a href="./index.php"> MaxYum.com | All Rights Reserved.</a>
-  </div>
+        <div class="footer-copyright text-center py-3">© 2018 Copyright:
+            <a href="./index.php" class="text-white"> maxyum.com </a> | All Rights Reserved.
+        </div>
+    </footer>
 
-</footer>
-       
-<!-- php -->
-<?php 
-if(isset($_POST['submit'])){
-    $from = "nmvekp09@gmail.com"; // this is your Email address
-    $to = $_POST['email']; // this is the sender's Email address
-    $first_name = $_POST['first_name'];
-    $last_name = $_POST['last_name'];
-    $subject = "Form submission";
-    $subject2 = "Copy of your form submission";
-    $message = $first_name . " " . $last_name . " wrote the following:" . "\n\n" . $_POST['discription'];
-    $message2 = "Here is a copy of your message " . $first_name . "\n\n" . $_POST['discription'];
-
-    $headers = "From:" . $from;
-    $headers2 = "From:" . $to;
-    mail($to,$subject,$message,$headers);
-    mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
-    echo "Mail Sent. Thank you " . $first_name . ", we will contact you shortly.";
-    // You can also use header('Location: thank_you.php'); to redirect to another page.
-    }
-?>
-<!-- /php -->
-
-</body>
+<//body>
 
 </html>

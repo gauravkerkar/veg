@@ -4,6 +4,13 @@
         header('location: login.php');
         exit();
     }
+
+    if(isset($_GET['logout'])) {
+        unset($_SESSION['user']);
+        session_destroy();
+        header('location: login.php');
+        exit();
+    }
 ?>
 <?php include('process.php') ?>
 <!DOCTYPE html>
@@ -106,6 +113,10 @@
                     <?php } ?>
                 </table>
             </div>
+            <form method="GET">
+                <input type="submit" name="logout" value="Logout" class="btn btn-primary float-right">
+            </form>
+            <br><br>
         </div>
     </div>
 
