@@ -1,4 +1,10 @@
 <?php
+     session_start();
+    if ($_SESSION['user'] == "") {
+        header('location: login.php');
+        exit();
+    }
+
    // Connect to the database
     $db = mysqli_connect('localhost', 'root', '', 'maxyum');
     if (isset($_POST['order'])) {
@@ -35,6 +41,13 @@
                    }  
               }  
          }  
-    }  
+    }
+    
+    if(isset($_GET['logout'])) {
+        unset($_SESSION['user']);
+        session_destroy();
+        header('location: login.php');
+        exit();
+    }
 
 ?>

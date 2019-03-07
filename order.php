@@ -1,17 +1,3 @@
-<?php 
-    session_start();
-    if ($_SESSION['user'] == "") {
-        header('location: login.php');
-        exit();
-    }
-
-    if(isset($_GET['logout'])) {
-        unset($_SESSION['user']);
-        session_destroy();
-        header('location: login.php');
-        exit();
-    }
-?>
 <?php include('process.php') ?>
 <!DOCTYPE html>
 <html>
@@ -114,7 +100,8 @@
                 </table>
             </div>
             <form method="GET">
-                <input type="submit" name="logout" value="Logout" class="btn btn-primary float-right">
+                <input type="submit" name="logout" value="Logout" class="btn btn-primary">
+                <input type="submit" name="order_mail" value="Order" class="btn btn-primary float-right">
             </form>
             <br><br>
         </div>
